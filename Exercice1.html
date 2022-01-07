@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf=8">
+    <title>Exercice UN</title>
+    <script>
+        function kap(){
+            var rows= document.queryselector('#rows').value;
+            var cols= document.querySelector('#cols').value;
+            var ecran= document.querySelector('#ecran');
+            ecran.innerHTML=makeTable(rows, cols);
+        }
+        function makeTable(r, c){
+            var table="<table border='1'>";
+            for (var i=0; i<r; i++){
+                table += "<tr>";
+                for (var j=0; j<c; j++){
+                    table += "<td>" + i + "," + j + "</td>";
+                }
+                table +="</tr>";
+            }
+            table  += "</table>";
+            return table;
+        }
+    </script>
+</head>
+<body>
+rows: <input type="text" id="rows" value="10"> <br>
+cols: <input type="text" id="cols" value="10"> <br>
+<button onclick="kap()">Dessiner</button> 
+<div id="ecran"></div>
+</body>
+</html>
